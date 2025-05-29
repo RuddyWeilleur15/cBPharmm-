@@ -36,3 +36,52 @@
     .info p {
       margin: 8px 0;
     }
+.toggle-button {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .toggle-button button {
+      background: #2ecc71;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="toggle-button">
+      <button onclick="show('mtn')">MTN MoMo</button>
+      <button onclick="show('orange')">Orange Money</button>
+    </div>
+
+    <div id="mtn" class="payment-box">
+      <h3>Informations de paiement (MTN MoMo)</h3>
+      <div class="info">
+        <p><strong>Numéro:</strong> +237673659983</p>
+        <p><strong>Nom:</strong> Ruddy Wendell</p>
+        <p><strong>Instruction:</strong> Veuillez composer *126# pour confirmer le paiement</p>
+      </div>
+    </div>
+
+    <div id="orange" class="payment-box" style="display: none;">
+      <h3>Informations de paiement (Orange Money)</h3>
+      <div class="info">
+        <p><strong>Numéro:</strong> +237686938604</p>
+        <p><strong>Nom:</strong> Ruddy Wendell</p>
+        <p><strong>Instruction:</strong> Veuillez composer *150# pour confirmer le paiement</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function show(method) {
+      document.getElementById('mtn').style.display = method === 'mtn' ? 'block' : 'none';
+      document.getElementById('orange').style.display = method === 'orange' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
